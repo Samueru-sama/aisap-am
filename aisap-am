@@ -15,7 +15,7 @@ if [ -z "$@" ]; then
 elif ! command -v am 1>/dev/null && ! command -v appman 1>/dev/null; then
 	echo " Error: You need AM or AppMan for this script work\nInstall AM/AppMan and try again"; exit 1
 elif ! command -v aisap 1>/dev/null; then
-	echo " Error: You need aisap for this script work\n Install aisap with AM/AppMan and try again"
+	echo " Error: You need aisap for this script work\n"
 	read -p " ◆ DO YOU WISH TO INSTALL AISAP (y,n)?: " yn
 	if echo "$yn" | grep -i '^y' >/dev/null 2>&1; then
 		am -i aisap 2>/dev/null || appman -i aisap 2>/dev/null
