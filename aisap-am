@@ -21,6 +21,7 @@ elif ! command -v aisap 1>/dev/null; then
 	read -p " ◆ DO YOU WISH TO INSTALL AISAP (y,n)?: " yn
 	if echo "$yn" | grep -i '^y' >/dev/null 2>&1; then
 		"$AMCLI" -i aisap >/dev/null 2>&1
+		echo $AMCLI
 	fi
 	command -v aisap 1>/dev/null && echo " aisap installed successfully" || exit 1
 fi
