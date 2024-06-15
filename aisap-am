@@ -31,9 +31,10 @@ elif ! strings -d "$APPIMAGE" | grep -- '--appimage-extract' 1>/dev/null; then
 fi
 
 # Check if we are using AM or AppMan
-if grep '^/opt' "$(readlink $(command -v am))"; then
+if echo "$APPIMAGE" | grep '^/opt' 1>/dev/null; then
 	echo "\n Making aisap script for AM..."
 	SUDOCMD="sudo "
+	if [ "$(id -u)" -ne 0 ]; then echo "You need run this as root for AppImages installed in /opt, aborting"; exit 1; fi
 else
 	echo "\n Making aisap script for AppMan..."
 	SUDOCMD=""
