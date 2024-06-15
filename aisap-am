@@ -12,7 +12,7 @@ if [ -z "$@" ]; then
 	echo " SOMEAPP being the symlink name to an AM/AppMan AppImage in PATH, which can difer from the name of the AM/AppMan package"
 	echo " For example: \"$0 librewolf\" to sandbox librewolf"
 	exit 1
-elif ! command -v am 1>/dev/null || ! command -v appman 1>/dev/null; then
+elif ! command -v am 1>/dev/null && ! command -v appman 1>/dev/null; then
 	echo " Error: You need AM or AppMan for this script work\nInstall AM/AppMan and try again"; exit 1
 elif ! command -v aisap 1>/dev/null; then
 	echo " Error: You need aisap for this script work\nInstall aisap with AM/AppMan and try again"; exit 1
