@@ -6,3 +6,5 @@ The default location for the sandboxed homes is at $HOME/.local/am-sandboxes Tha
 aisap: https://github.com/mgord9518/aisap
 
 AM/AppMan: https://github.com/ivan-hc/AM
+
+aisap can be installed by am as well using `am -i aisap`
