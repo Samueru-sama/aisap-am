@@ -18,10 +18,9 @@ elif ! command -v aisap 1>/dev/null; then
 	echo " Error: You need aisap for this script work\n"
 	read -p " ◆ DO YOU WISH TO INSTALL AISAP (y,n)?: " yn
 	if echo "$yn" | grep -i '^y' >/dev/null 2>&1; then
-		am -i aisap 2>/dev/null || appman -i aisap 2>/dev/null
-	else
-		exit 1
-	fi	
+		am -i aisap >/dev/null 2>&1
+	fi
+	command -v aisap 1>/dev/null || exit 1
 fi
 
 # Set variables
