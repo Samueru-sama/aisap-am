@@ -20,8 +20,7 @@ elif ! command -v aisap 1>/dev/null; then
 	echo " Error: You need aisap for this script work\n"
 	read -p " ◆ DO YOU WISH TO INSTALL AISAP (y,n)?: " yn
 	if echo "$yn" | grep -i '^y' >/dev/null 2>&1; then
-		"$AMCLI" -i aisap >/dev/null 2>&1
-		echo $AMCLI
+		"$AMCLI" -i aisap
 	fi
 	command -v aisap 1>/dev/null && echo " aisap installed successfully" || exit 1
 fi
