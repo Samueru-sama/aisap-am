@@ -68,7 +68,7 @@ if [ "$1" = "--disable-sandbox" ]; then
 	echo "\n Giving exec permissions back to $APPEXEC..."
 	chmod a+x "$APPEXEC" || exit 1
 	echo " Patching $APPIMAGEPATH/AM-updater to give permissions back..."
-	sed -i 's|chmod a+x|chmod a-x|g' "$APPIMAGEPATH/AM-updater" || exit 1
+	sed -i 's|chmod a-x|chmod a+x|g' "$APPIMAGEPATH/AM-updater" || exit 1
 	THISFILE="$(realpath "$0")"
 	echo " Replacing $THISFILE with a link to the AppImage...\n"
 	SUDO ln -sf "$APPEXEC" "$THISFILE" || exit 1
