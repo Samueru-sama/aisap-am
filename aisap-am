@@ -15,7 +15,13 @@ if [ -z "$@" ]; then
 elif ! command -v am 1>/dev/null && ! command -v appman 1>/dev/null; then
 	echo " Error: You need AM or AppMan for this script work\nInstall AM/AppMan and try again"; exit 1
 elif ! command -v aisap 1>/dev/null; then
-	echo " Error: You need aisap for this script work\nInstall aisap with AM/AppMan and try again"; exit 1
+	echo " Error: You need aisap for this script work\n Install aisap with AM/AppMan and try again"
+	read -p " ◆ DO YOU WISH TO INSTALL AISAP (y,n)?: " yn
+	if echo "$yn" | grep -i '^y' >/dev/null 2>&1; then
+		am -i aisap 2>/dev/null || appman -i aisap 2>/dev/null
+	else
+		exit 1
+	fi	
 fi
 
 # Set variables
@@ -105,7 +111,7 @@ echo "
 
  This location can be moved by setting the 'SANDBOXDIR' env variable
 
- ------------------------------------------------------------------------------------------
+ --------------------------------------------------------------------------
 
  \033[33mUse the --disable-sandbox flag if you want to revert the changes
 
