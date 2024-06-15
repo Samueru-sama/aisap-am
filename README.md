@@ -7,7 +7,7 @@ aisap: https://github.com/mgord9518/aisap
 
 AM/AppMan: https://github.com/ivan-hc/AM
 
-aisap can be installed by am as well using `am -i aisap`
+aisap can be installed by AM as well using `am -i aisap` or `appman -i aisap`
 
 By default the following location are given access to, edit each resulting script if needed (The default permissions might change in the future): 
 
